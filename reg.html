@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>registration form</title>
+</head>
+
+<body bgcolor="#16ECE9">
+    <div class="t">
+        <div class="d2">
+            <form id="f1" action="index.html" method="get" onsubmit="return(val())">
+                <h2 class="t2"> REGISTER FORM</h2>
+                <span id="sp"></span>
+                <h4 class="t3">First Name &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Last Name</h4>
+                <input class="b2" type="text" id="txt1">&ensp;
+                <input class="b2" type="text">
+                <h4 class="t3">Your Email</h4>
+                <input class="b3" type="text" id="txt2">
+                <h4 class="t3">Password &emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;Confirm Password
+                </h4>
+                <input class="b2" type="password" id="txt3">&ensp;
+                <input class="b2" type="password" id="txt4">
+                <br><br>
+                <input class="c1" type="checkbox">i agree to the <a href="#">Tearms and Conditions</a>
+                <br><br>
+                <input type="submit" class="b4"></input>
+                <br><br><br><br>
+            </form>
+        </div>
+    </div>
+    <script>
+        var txt1 = document.getElementById("txt1");
+        var txt2 = document.getElementById("txt2");
+        var txt3 = document.getElementById("txt3");
+        var txt4 = document.getElementById("txt4");
+        var sp = document.getElementById("sp");
+        sp.style.color = "red"
+        function val() {
+            if (txt1.value == "") {
+                sp.innerHTML = "must enter username";
+                return (false);
+            }
+            else if (txt2.value == "") {
+                sp.innerHTML = "must enter email";
+                return (false);
+            }
+            else if (txt3.value == "") {
+                sp.innerHTML = "must enter passsword";
+                return (false);
+            }
+            else if (txt3.value.length < 6) {
+                sp.innerHTML = "password must be alteast 6 charactors long";
+                return (false);
+            }
+            else if (txt4.value == "") {
+                sp.innerHTML = "must enter confirm password";
+                return (false);
+            }
+            else if (txt3.value != txt4.value) {
+                sp.innerHTML = "incorrect confirm password";
+                txt4.value = "";
+                return (false);
+            }
+            else {
+                return (true)
+            }
+        }
+
+    </script>
+</body>
+
+</html>
